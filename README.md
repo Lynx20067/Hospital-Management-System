@@ -1,13 +1,9 @@
-# 🏥 CareDesk — Hospital Management System
+# CareDesk — Hospital Management System
 
-![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-Express-339933?logo=node.js&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-8-4479A1?logo=mysql&logoColor=white)
 
 CareDesk is a full-stack hospital management web application built with **React + Vite**, **Node.js + Express** and **MySQL**. It connects the front desk, doctors, laboratory, pharmacy, wards and billing in one system, with a separate login and menu for every staff role.
 
-## ✨ Features
+##  Features
 
 - **Patient registration** with an automatically generated unique ID (`PAT00001`, `PAT00002`, …)
 - **Appointments** with double-booking protection and automatic **Expired** status using the system clock
@@ -22,7 +18,7 @@ CareDesk is a full-stack hospital management web application built with **React 
 - **Searchable patient dropdowns** (search by name, patient ID or phone) on every screen
 - **Role-based access** with JWT login and bcrypt-hashed passwords
 
-## 👥 User roles
+##  User roles
 
 | Role | What they can do |
 |---|---|
@@ -33,7 +29,7 @@ CareDesk is a full-stack hospital management web application built with **React 
 | Pharmacist | Issue medicines, manage inventory, billing and invoices |
 | Lab technician | Upload laboratory results |
 
-## 🛠 Tech stack
+##  Tech stack
 
 | Layer | Technology |
 |---|---|
@@ -41,7 +37,7 @@ CareDesk is a full-stack hospital management web application built with **React 
 | Backend | Node.js, Express 4, jsonwebtoken, bcryptjs, PDFKit, cors |
 | Database | MySQL 8, `mysql2` |
 
-## 📁 Project structure
+##  Project structure
 
 ```
 hospital/
@@ -66,7 +62,7 @@ hospital/
 
 The `hms` database has 13 tables. `schema.sql` creates 11 of them; the server creates `users` and `prescriptions` automatically when it starts.
 
-## 🚀 Getting started
+##  Getting started
 
 ### Prerequisites
 
@@ -92,7 +88,8 @@ Run `schema.sql` only once. To start over, run `DROP DATABASE hms;` and execute 
 
 ```bash
 cd server
-npm install
+npm install express cors mysql2 bcryptjs jsonwebtoken pdfkit
+npm start
 ```
 
 Set your MySQL password, either by editing the `password` line in `server/index.js` or for the current terminal session (PowerShell):
@@ -121,7 +118,7 @@ npm run dev
 
 Open the URL Vite prints, normally <http://localhost:5173>.
 
-## 🔐 Default logins
+##  Default logins
 
 Every password is the username followed by `@123`.
 
@@ -137,7 +134,7 @@ Every password is the username followed by `@123`.
 - Each doctor the administrator adds gets a login automatically: the doctor's first name in lowercase, with the password `<username>@123`.
 - **Change these passwords and set a strong `JWT_SECRET` before using the project outside a local demo.** Never commit your real MySQL password to GitHub.
 
-## 🧩 Troubleshooting
+##  Troubleshooting
 
 | Problem | Fix |
 |---|---|
@@ -148,7 +145,7 @@ Every password is the username followed by `@123`.
 | `Cannot find module ...` | Run `npm install` in the folder that reported the error (`server` or `client`) |
 | Workbench "safe update mode" error | Add `WHERE id > 0` to your `UPDATE` or `DELETE` statement |
 
-## 🔭 Future improvements
+##  Future improvements
 
 - Patient portal and appointment reminders
 - Discharge process with automatic bed release
@@ -156,10 +153,3 @@ Every password is the username followed by `@123`.
 - Edit/cancel options, audit log and password change
 - Automated tests and deployment with HTTPS
 
-## 📄 License
-
-Add your license here (for example MIT).
-
-## 👤 Author
-
-Your name — [GitHub](https://github.com/<your-username>)
